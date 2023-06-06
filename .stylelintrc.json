@@ -1,18 +1,20 @@
 {
-    "connector": {
-      "name": "local",
-      "options": {
-        "pattern": ["**", "!.git/**", "!node_modules/**"]
-      }
+    "extends": ["stylelint-config-standard"],
+    "plugins": ["stylelint-scss", "stylelint-csstree-validator"],
+    "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"]
+        }
+      ],
+      "scss/at-rule-no-unknown":  [
+        true,
+        {
+          "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"]
+        }
+      ],
+      "csstree/validator": true
     },
-    "extends": ["development"],
-    "formatters": ["stylish"],
-    "hints": [
-      "button-type",
-      "disown-opener",
-      "html-checker",
-      "meta-charset-utf-8",
-      "meta-viewport",
-      "no-inline-styles:error"
-    ]
+    "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css", "**/*.js", "**/*.jsx"]
   }
