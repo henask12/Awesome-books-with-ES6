@@ -1,4 +1,4 @@
-export default function showSection(sectionId) {
+const showSection = (sectionId) => {
   const sections = document.getElementsByClassName('list-section');
 
   for (let i = 0; i < sections.length; i += 1) {
@@ -9,4 +9,6 @@ export default function showSection(sectionId) {
       content.classList.add('hidden');
     }
   }
-}
+};
+
+export default showSection;

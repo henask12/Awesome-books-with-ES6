@@ -23,7 +23,7 @@ class BookList {
     this.addLink.addEventListener('click', () => this.showSection('form-section'));
     this.contactLink.addEventListener('click', () => this.showSection('contact-section'));
 
-    this.displayDate();
+    this.displayDate('date');
   }
 
     attachRemoveButtonListeners = () => {
@@ -45,6 +45,8 @@ class BookList {
     };
 
     displayBooks = displayBooks.bind(this);
+
+    displayBooks = displayBooks.bind(null, this.bookList);
 
     addBooks = addBooks.bind(this);
 

@@ -1,6 +1,6 @@
 import Book from './books.js';
 
-export default function addBooks(event) {
+const addBooks = (event) => {
   event.preventDefault();
   const title = this.inputTitle.value;
   const author = this.inputAuthor.value;
@@ -12,4 +12,6 @@ export default function addBooks(event) {
   this.displayBooks();
   this.inputAuthor.value = '';
   this.inputTitle.value = '';
-}
+};
+
+export default addBooks;
